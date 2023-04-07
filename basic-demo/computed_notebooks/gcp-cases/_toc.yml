@@ -1,0 +1,9 @@
+format: jb-book
+root: description
+parts:
+- caption: Sea Surface Height
+  chapters:
+  - file: ssh
+- caption: MOC
+  chapters:
+  - glob: moc-view*

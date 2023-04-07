@@ -1,0 +1,90 @@
+###
+# data sources
+data_sources:
+    casename: &casename
+      gcp-cases
+    path_to_cat_json: '/glade/u/home/eromashkova/codes/nbscuid-examples/basic-demo/gcp-cases.json'
+    subset:
+      case:
+        - 'g.e22.GOMIPECOIAF_JRA-1p4-2018.TL319_g17.GCB_2022.BCRD'
+    run_dir: '/glade/u/home/eromashkova/codes/nbscuid-examples/basic-demo'
+    nb_path_root: '/glade/u/home/eromashkova/codes/nbscuid-examples/basic-demo/nbscuid_test_nbs'
+
+###
+# computation config keys
+output_root: ./_computed-notebooks
+default_kernel_name: nbscuid-basic-demo-env1
+account: NCGD0011
+
+
+###
+# book table of contents
+book_toc:
+  format: jb-book
+  root: description
+  parts:
+    - caption: Sea Surface Height
+      chapters:
+        - file: ssh
+    - caption: MOC
+      chapters:
+        - glob: moc-view*
+
+###
+# book _config.yml keys
+book_config_keys:
+  title: nbscuid demo
+  repository:
+    url: https://github.com/rmshkv/nbscuid
+    path_to_book: notebooks
+    branch: main
+    
+
+###
+# publish location keys
+publish_location:
+    remote_mach: thorodin.cgd.ucar.edu
+    ### this will not generalize, fix!
+    remote_dir: /project/webshare/projects/ocean-diagnostics-books/eromashkova/gcp-cases
+
+###
+# computational notebooks
+compute_notebooks:  
+
+  description:
+    use_cluster: False
+    parameter_groups:
+      none:
+        casename: *casename
+  
+  ssh:
+    use_cluster: True
+    subset:
+      frequency: 'month_1'
+      component: 'ocn'
+      variable: 'SSH'
+    parameter_groups:  
+      none:
+        casename: *casename
+
+  POP_MOC_extract_cat:
+    use_cluster: True
+    kernel_name: nbscuid-basic-demo-env2
+    subset:
+      frequency: 'month_1'
+      component: 'ocn'
+      variable: 'MOC'
+    parameter_groups:  
+      none:
+        casename: *casename
+       
+  moc-view:
+    use_cluster: True
+    kernel_name: nbscuid-basic-demo-env2
+    dependency: 'POP_MOC_extract_cat'
+    parameter_groups:
+      26n:
+        casename: *casename
+        title_param: "26n"
+        
+        

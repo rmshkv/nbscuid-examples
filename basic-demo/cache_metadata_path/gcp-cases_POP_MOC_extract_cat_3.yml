@@ -1,0 +1,16 @@
+assets: /glade/u/home/eromashkova/codes/nbscuid-examples/basic-demo/cache_data_path/gcp-cases_POP_MOC_extract_cat_3.nc
+catalog_last_updated: Fri Apr  7 13:51:00 2023
+catalog_path: /glade/u/home/eromashkova/codes/nbscuid-examples/basic-demo/gcp-cases.json
+diagnostic_last_updated: Wed Apr  5 13:12:07 2023
+diagnostic_path: /glade/u/home/eromashkova/codes/nbscuid-examples/basic-demo/nbscuid_test_nbs/POP_MOC_extract_cat.ipynb
+hash: 01070abaab13b02ecdac3963fa57991a6a342e5b3f44d15023ae31c3ef2535ce
+parameters:
+  casename: gcp-cases
+subset:
+  case:
+  - g.e22.GOMIPECOIAF_JRA-1p4-2018.TL319_g17.GCB_2022.BCRD
+  component: ocn
+  frequency: month_1
+  variable: MOC
+time_executed: Fri Apr  7 13:53:18 2023
+yml_path: /glade/u/home/eromashkova/codes/nbscuid-examples/basic-demo/cache_metadata_path/gcp-cases_POP_MOC_extract_cat_3.yml
