@@ -1,0 +1,64 @@
+###
+# data sources
+data_sources:
+    casename: &casename
+      placeholder-casename
+    run_dir: '/glade/u/home/eromashkova/codes/nbscuid-examples/mom6-solutions'
+    nb_path_root: '/glade/u/home/eromashkova/codes/nbscuid-examples/mom6-solutions/nblibrary'
+
+###
+# computation config keys
+output_root: ./_computed-notebooks
+default_kernel_name: mom6_solutions
+account: NCGD0011
+
+
+###
+# book table of contents
+book_toc:
+  format: jb-book
+  root: intro
+  parts:
+    - caption: mom6-solutions notebooks
+      chapters:
+        - file: equatorial
+        - file: moc
+
+
+###
+# book _config.yml keys
+book_config_keys:
+  title: mom6_solutions automation
+  repository:
+    url: https://github.com/rmshkv/nbscuid
+    path_to_book: notebooks
+    branch: main
+    
+
+###
+# computational notebooks
+compute_notebooks:  
+
+  intro:
+    use_cluster: False
+    parameter_groups:
+      none:
+        casename: *casename
+  
+  equatorial:
+    use_cluster: True
+    parameter_groups:  
+      none:
+        not_casename: *casename
+  
+  moc:
+    use_cluster: True
+    parameter_groups:  
+      none:
+        not_casename: *casename
+
+
+  
+
+        
+        

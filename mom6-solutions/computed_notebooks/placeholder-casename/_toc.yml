@@ -1,0 +1,7 @@
+format: jb-book
+root: intro
+parts:
+- caption: mom6-solutions notebooks
+  chapters:
+  - file: equatorial
+  - file: moc
