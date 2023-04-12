@@ -8,7 +8,6 @@ data_sources:
 
 ###
 # computation config keys
-output_root: ./_computed-notebooks
 default_kernel_name: mom6_solutions
 account: NCGD0011
 
@@ -46,13 +45,15 @@ compute_notebooks:
         casename: *casename
   
   equatorial:
-    use_cluster: True
+    use_cluster: False
     parameter_groups:  
       none:
         not_casename: *casename
+        obs_path: '/glade/u/home/gmarques/Notebooks/CESM_MOM6/WOA18_remapping/'
+        obs_suffix: '_tx0.66v1_34lev_ann_avg.nc'
   
   moc:
-    use_cluster: True
+    use_cluster: False
     parameter_groups:  
       none:
         not_casename: *casename

@@ -18,7 +18,7 @@ import pop_tools
 matplotlib.rcParams.update({'font.size': 18})
 warnings.filterwarnings("ignore")
 
-diag_config_yml = yaml.load(open('../diag_config.yml','r'),
+diag_config_yml = yaml.load(open('diag_config.yml','r'),
                             Loader=yaml.Loader)
 # initialize lists
 dcase = []; casename=[]
