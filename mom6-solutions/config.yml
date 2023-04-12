@@ -22,6 +22,7 @@ book_toc:
       chapters:
         - file: equatorial
         - file: moc
+        - file: ocean_stats
 
 
 ###
@@ -53,6 +54,12 @@ compute_notebooks:
         obs_suffix: '_tx0.66v1_34lev_ann_avg.nc'
   
   moc:
+    use_cluster: False
+    parameter_groups:  
+      none:
+        not_casename: *casename
+        
+  ocean_stats:
     use_cluster: False
     parameter_groups:  
       none:

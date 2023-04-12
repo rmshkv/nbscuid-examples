@@ -5,3 +5,4 @@ parts:
   chapters:
   - file: equatorial
   - file: moc
+  - file: ocean_stats
