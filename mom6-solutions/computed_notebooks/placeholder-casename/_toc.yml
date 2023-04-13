@@ -6,3 +6,6 @@ parts:
   - file: equatorial
   - file: moc
   - file: ocean_stats
+  - file: surface
+  - file: transports
+  - file: ts_biases

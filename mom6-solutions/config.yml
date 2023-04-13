@@ -23,6 +23,10 @@ book_toc:
         - file: equatorial
         - file: moc
         - file: ocean_stats
+        # - file: pht
+        - file: surface
+        - file: transports
+        - file: ts_biases
 
 
 ###
@@ -64,8 +68,31 @@ compute_notebooks:
     parameter_groups:  
       none:
         not_casename: *casename
+          
+#   pht:
+#     use_cluster: False
+#     parameter_groups:  
+#       none:
+#         not_casename: *casename
 
+  surface:
+    use_cluster: False
+    parameter_groups:  
+      none:
+        not_casename: *casename
 
+  transports:
+    use_cluster: False
+    parameter_groups:  
+      none:
+        not_casename: *casename
+        
+  ts_biases:
+    use_cluster: False
+    parameter_groups:  
+      none:
+        not_casename: *casename
+  
   
 
         
