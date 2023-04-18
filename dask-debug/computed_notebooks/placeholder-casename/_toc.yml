@@ -1,0 +1,6 @@
+format: jb-book
+root: dasktest
+parts:
+- caption: dask debugging
+  chapters:
+  - file: dasktest

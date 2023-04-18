@@ -1,0 +1,49 @@
+###
+# data sources
+data_sources:
+    casename: &casename
+      placeholder-casename
+    run_dir: '/glade/u/home/eromashkova/codes/nbscuid-examples/dask-debug'
+    nb_path_root: '/glade/u/home/eromashkova/codes/nbscuid-examples/dask-debug/nblibrary'
+
+###
+# computation config keys
+default_kernel_name: nbscuid-papermill-test
+account: NCGD0011
+
+
+###
+# book table of contents
+book_toc:
+  format: jb-book
+  root: dasktest
+  parts:
+    - caption: dask debugging
+      chapters:
+        - file: dasktest
+
+
+###
+# book _config.yml keys
+book_config_keys:
+  title: dask debugging
+  repository:
+    url: https://github.com/rmshkv/nbscuid
+    path_to_book: notebooks
+    branch: main
+    
+
+###
+# computational notebooks
+compute_notebooks:  
+
+  dasktest:
+    use_cluster: True
+    parameter_groups:
+      none:
+        casename: *casename
+  
+  
+
+        
+        
