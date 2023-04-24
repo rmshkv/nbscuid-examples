@@ -3,4 +3,4 @@ root: dasktest
 parts:
 - caption: dask debugging
   chapters:
-  - file: dasktest
+  - file: dasktest2

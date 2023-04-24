@@ -20,7 +20,7 @@ book_toc:
   parts:
     - caption: dask debugging
       chapters:
-        - file: dasktest
+        - file: dasktest2
 
 
 ###
@@ -38,7 +38,12 @@ book_config_keys:
 compute_notebooks:  
 
   dasktest:
-    use_cluster: True
+    use_cluster: False
+    parameter_groups:
+      none:
+        casename: *casename
+  dasktest2:
+    use_cluster: False
     parameter_groups:
       none:
         casename: *casename
