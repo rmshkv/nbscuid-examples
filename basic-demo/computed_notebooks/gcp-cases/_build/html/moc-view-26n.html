@@ -379,6 +379,7 @@ document.write(`
 <span class="n">path_to_cat</span> <span class="o">=</span> <span class="s2">&quot;placeholder&quot;</span>
 <span class="n">subset_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">asset_path</span> <span class="o">=</span> <span class="s2">&quot;placeholder&quot;</span>
+<span class="n">cluster_scheduler_address</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
 </div>
 </div>
@@ -388,10 +389,9 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameters</span>
 <span class="n">casename</span> <span class="o">=</span> <span class="s2">&quot;gcp-cases&quot;</span>
 <span class="n">title_param</span> <span class="o">=</span> <span class="s2">&quot;26n&quot;</span>
-<span class="n">path_to_cat</span> <span class="o">=</span> <span class="s2">&quot;/glade/u/home/eromashkova/codes/nbscuid-examples/basic-demo/temp_data/gcp-cases_subset.json&quot;</span>
-<span class="n">cluster_scheduler_address</span> <span class="o">=</span> <span class="s2">&quot;tcp://10.12.206.48:41415&quot;</span>
 <span class="n">subset_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">asset_path</span> <span class="o">=</span> <span class="s2">&quot;/glade/u/home/eromashkova/codes/nbscuid-examples/basic-demo/cache_data_path/gcp-cases_POP_MOC_extract_cat_3.nc&quot;</span>
+<span class="n">path_to_cat</span> <span class="o">=</span> <span class="s2">&quot;/glade/u/home/eromashkova/codes/nbscuid-examples/basic-demo/temp_data/gcp-cases_subset.json&quot;</span>
+<span class="n">asset_path</span> <span class="o">=</span> <span class="s2">&quot;/glade/u/home/eromashkova/codes/nbscuid-examples/basic-demo/cache_data_path/gcp-cases_POP_MOC_extract_cat_4.nc&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -410,44 +410,30 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/glade/work/eromashkova/miniconda3/envs/diag-sandbox-moc-pop-tools/lib/python3.9/site-packages/distributed/client.py:1361: VersionMismatchWarning: Mismatched versions found
-
-+-------------+----------------+---------------+---------------+
-| Package     | Client         | Scheduler     | Workers       |
-+-------------+----------------+---------------+---------------+
-| cloudpickle | 2.2.0          | 2.2.1         | 2.2.1         |
-| dask        | 2022.11.0      | 2023.3.2      | 2023.3.2      |
-| distributed | 2022.11.0      | 2023.3.2.1    | 2023.3.2.1    |
-| lz4         | 4.0.2          | 4.3.2         | 4.3.2         |
-| msgpack     | 1.0.4          | 1.0.5         | 1.0.5         |
-| numpy       | 1.23.4         | 1.23.5        | 1.23.5        |
-| pandas      | 1.5.1          | 1.5.3         | 1.5.3         |
-| python      | 3.9.13.final.0 | 3.9.0.final.0 | 3.9.0.final.0 |
-| tornado     | 6.1            | 6.2           | 6.2           |
-+-------------+----------------+---------------+---------------+
-Notes: 
--  msgpack: Variation is ok, as long as everything is above 0.6
-  warnings.warn(version_module.VersionMismatchWarning(msg[0][&quot;warning&quot;]))
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/glade/work/eromashkova/miniconda3/envs/diag-sandbox-moc-pop-tools/lib/python3.9/site-packages/distributed/node.py:183: UserWarning: Port 8787 is already in use.
+Perhaps you already have a cluster running?
+Hosting the HTTP server on port 40078 instead
+  warnings.warn(
 </pre></div>
 </div>
 <div class="output text_html"><div>
     <div style="width: 24px; height: 24px; background-color: #e1e1e1; border: 3px solid #9D9D9D; border-radius: 5px; position: absolute;"> </div>
     <div style="margin-left: 48px;">
         <h3 style="margin-bottom: 0px;">Client</h3>
-        <p style="color: #9D9D9D; margin-bottom: 0px;">Client-f0323052-d57d-11ed-84da-3cecef1b12de</p>
+        <p style="color: #9D9D9D; margin-bottom: 0px;">Client-e86968ef-d9b8-11ed-b2d1-3cecef1b12de</p>
         <table style="width: 100%; text-align: left;">
 
         <tr>
         
-            <td style="text-align: left;"><strong>Connection method:</strong> Direct</td>
-            <td style="text-align: left;"></td>
+            <td style="text-align: left;"><strong>Connection method:</strong> Cluster object</td>
+            <td style="text-align: left;"><strong>Cluster type:</strong> dask_jobqueue.PBSCluster</td>
         
         </tr>
 
         
             <tr>
                 <td style="text-align: left;">
-                    <strong>Dashboard: </strong> <a href="https://jupyterhub.hpc.ucar.edu/stable/user/eromashkova/proxy/33381/status" target="_blank">https://jupyterhub.hpc.ucar.edu/stable/user/eromashkova/proxy/33381/status</a>
+                    <strong>Dashboard: </strong> <a href="https://jupyterhub.hpc.ucar.edu/stable/user/eromashkova/proxy/40078/status" target="_blank">https://jupyterhub.hpc.ucar.edu/stable/user/eromashkova/proxy/40078/status</a>
                 </td>
                 <td style="text-align: left;"></td>
             </tr>
@@ -459,36 +445,67 @@ Notes:
 
         
             <details>
-            <summary style="margin-bottom: 20px;"><h3 style="display: inline;">Scheduler Info</h3></summary>
+            <summary style="margin-bottom: 20px;"><h3 style="display: inline;">Cluster Info</h3></summary>
+            <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-mod-trusted jp-OutputArea-output">
+    <div style="width: 24px; height: 24px; background-color: #e1e1e1; border: 3px solid #9D9D9D; border-radius: 5px; position: absolute;">
+    </div>
+    <div style="margin-left: 48px;">
+        <h3 style="margin-bottom: 0px; margin-top: 0px;">PBSCluster</h3>
+        <p style="color: #9D9D9D; margin-bottom: 0px;">c5fc7946</p>
+        <table style="width: 100%; text-align: left;">
+            <tr>
+                <td style="text-align: left;">
+                    <strong>Dashboard:</strong> <a href="https://jupyterhub.hpc.ucar.edu/stable/user/eromashkova/proxy/40078/status" target="_blank">https://jupyterhub.hpc.ucar.edu/stable/user/eromashkova/proxy/40078/status</a>
+                </td>
+                <td style="text-align: left;">
+                    <strong>Workers:</strong> 0
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">
+                    <strong>Total threads:</strong> 0
+                </td>
+                <td style="text-align: left;">
+                    <strong>Total memory:</strong> 0 B
+                </td>
+            </tr>
+            
+        </table>
+
+        <details>
+            <summary style="margin-bottom: 20px;">
+                <h3 style="display: inline;">Scheduler Info</h3>
+            </summary>
+
             <div style="">
     <div>
         <div style="width: 24px; height: 24px; background-color: #FFF7E5; border: 3px solid #FF6132; border-radius: 5px; position: absolute;"> </div>
         <div style="margin-left: 48px;">
             <h3 style="margin-bottom: 0px;">Scheduler</h3>
-            <p style="color: #9D9D9D; margin-bottom: 0px;">Scheduler-a44dbee2-0caa-486b-903c-0b02df2b0369</p>
+            <p style="color: #9D9D9D; margin-bottom: 0px;">Scheduler-82bf1ba5-ab82-4f3f-a667-40cff4bc7cd3</p>
             <table style="width: 100%; text-align: left;">
                 <tr>
                     <td style="text-align: left;">
-                        <strong>Comm:</strong> tcp://10.12.206.48:41415
+                        <strong>Comm:</strong> tcp://10.12.206.48:45726
                     </td>
                     <td style="text-align: left;">
-                        <strong>Workers:</strong> 4
-                    </td>
-                </tr>
-                <tr>
-                    <td style="text-align: left;">
-                        <strong>Dashboard:</strong> <a href="https://jupyterhub.hpc.ucar.edu/stable/user/eromashkova/proxy/33381/status" target="_blank">https://jupyterhub.hpc.ucar.edu/stable/user/eromashkova/proxy/33381/status</a>
-                    </td>
-                    <td style="text-align: left;">
-                        <strong>Total threads:</strong> 4
+                        <strong>Workers:</strong> 0
                     </td>
                 </tr>
                 <tr>
                     <td style="text-align: left;">
-                        <strong>Started:</strong> 2 minutes ago
+                        <strong>Dashboard:</strong> <a href="https://jupyterhub.hpc.ucar.edu/stable/user/eromashkova/proxy/40078/status" target="_blank">https://jupyterhub.hpc.ucar.edu/stable/user/eromashkova/proxy/40078/status</a>
                     </td>
                     <td style="text-align: left;">
-                        <strong>Total memory:</strong> 93.12 GiB
+                        <strong>Total threads:</strong> 0
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+                        <strong>Started:</strong> Just now
+                    </td>
+                    <td style="text-align: left;">
+                        <strong>Total memory:</strong> 0 B
                     </td>
                 </tr>
             </table>
@@ -501,352 +518,12 @@ Notes:
         </summary>
 
         
-        <div style="margin-bottom: 20px;">
-            <div style="width: 24px; height: 24px; background-color: #DBF5FF; border: 3px solid #4CC9FF; border-radius: 5px; position: absolute;"> </div>
-            <div style="margin-left: 48px;">
-            <details>
-                <summary>
-                    <h4 style="margin-bottom: 0px; display: inline;">Worker: PBSCluster-1</h4>
-                </summary>
-                <table style="width: 100%; text-align: left;">
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Comm: </strong> tcp://10.12.206.61:45452
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Total threads: </strong> 1
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Dashboard: </strong> <a href="https://jupyterhub.hpc.ucar.edu/stable/user/eromashkova/proxy/44545/status" target="_blank">https://jupyterhub.hpc.ucar.edu/stable/user/eromashkova/proxy/44545/status</a>
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Memory: </strong> 23.28 GiB
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Nanny: </strong> tcp://10.12.206.61:45767
-                        </td>
-                        <td style="text-align: left;"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="text-align: left;">
-                            <strong>Local directory: </strong> /glade/scratch/eromashkova/dask-workers/dask-worker-space/worker-d25ghjzv
-                        </td>
-                    </tr>
-
-                    
-
-                    
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Tasks executing: </strong> 
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Tasks in memory: </strong> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Tasks ready: </strong> 
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Tasks in flight: </strong>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>CPU usage:</strong> 2.0%
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Last seen: </strong> Just now
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Memory usage: </strong> 190.70 MiB
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Spilled bytes: </strong> 0 B
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Read bytes: </strong> 10.67 kiB
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Write bytes: </strong> 4.93 kiB
-                        </td>
-                    </tr>
-                    
-
-                </table>
-            </details>
-            </div>
-        </div>
-        
-        <div style="margin-bottom: 20px;">
-            <div style="width: 24px; height: 24px; background-color: #DBF5FF; border: 3px solid #4CC9FF; border-radius: 5px; position: absolute;"> </div>
-            <div style="margin-left: 48px;">
-            <details>
-                <summary>
-                    <h4 style="margin-bottom: 0px; display: inline;">Worker: PBSCluster-23</h4>
-                </summary>
-                <table style="width: 100%; text-align: left;">
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Comm: </strong> tcp://10.12.206.56:39885
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Total threads: </strong> 1
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Dashboard: </strong> <a href="https://jupyterhub.hpc.ucar.edu/stable/user/eromashkova/proxy/35272/status" target="_blank">https://jupyterhub.hpc.ucar.edu/stable/user/eromashkova/proxy/35272/status</a>
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Memory: </strong> 23.28 GiB
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Nanny: </strong> tcp://10.12.206.56:44891
-                        </td>
-                        <td style="text-align: left;"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="text-align: left;">
-                            <strong>Local directory: </strong> /glade/scratch/eromashkova/dask-workers/dask-worker-space/worker-546nsq7a
-                        </td>
-                    </tr>
-
-                    
-
-                    
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Tasks executing: </strong> 
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Tasks in memory: </strong> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Tasks ready: </strong> 
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Tasks in flight: </strong>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>CPU usage:</strong> 2.0%
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Last seen: </strong> Just now
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Memory usage: </strong> 284.58 MiB
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Spilled bytes: </strong> 0 B
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Read bytes: </strong> 1.44 GiB
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Write bytes: </strong> 1.15 GiB
-                        </td>
-                    </tr>
-                    
-
-                </table>
-            </details>
-            </div>
-        </div>
-        
-        <div style="margin-bottom: 20px;">
-            <div style="width: 24px; height: 24px; background-color: #DBF5FF; border: 3px solid #4CC9FF; border-radius: 5px; position: absolute;"> </div>
-            <div style="margin-left: 48px;">
-            <details>
-                <summary>
-                    <h4 style="margin-bottom: 0px; display: inline;">Worker: PBSCluster-27</h4>
-                </summary>
-                <table style="width: 100%; text-align: left;">
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Comm: </strong> tcp://10.12.205.12:33645
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Total threads: </strong> 1
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Dashboard: </strong> <a href="https://jupyterhub.hpc.ucar.edu/stable/user/eromashkova/proxy/45530/status" target="_blank">https://jupyterhub.hpc.ucar.edu/stable/user/eromashkova/proxy/45530/status</a>
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Memory: </strong> 23.28 GiB
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Nanny: </strong> tcp://10.12.205.12:43531
-                        </td>
-                        <td style="text-align: left;"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="text-align: left;">
-                            <strong>Local directory: </strong> /glade/scratch/eromashkova/dask-workers/dask-worker-space/worker-fzhzz1i8
-                        </td>
-                    </tr>
-
-                    
-
-                    
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Tasks executing: </strong> 
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Tasks in memory: </strong> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Tasks ready: </strong> 
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Tasks in flight: </strong>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>CPU usage:</strong> 2.0%
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Last seen: </strong> Just now
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Memory usage: </strong> 285.63 MiB
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Spilled bytes: </strong> 0 B
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Read bytes: </strong> 13.07 kiB
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Write bytes: </strong> 9.59 kiB
-                        </td>
-                    </tr>
-                    
-
-                </table>
-            </details>
-            </div>
-        </div>
-        
-        <div style="margin-bottom: 20px;">
-            <div style="width: 24px; height: 24px; background-color: #DBF5FF; border: 3px solid #4CC9FF; border-radius: 5px; position: absolute;"> </div>
-            <div style="margin-left: 48px;">
-            <details>
-                <summary>
-                    <h4 style="margin-bottom: 0px; display: inline;">Worker: PBSCluster-8</h4>
-                </summary>
-                <table style="width: 100%; text-align: left;">
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Comm: </strong> tcp://10.12.206.39:44071
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Total threads: </strong> 1
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Dashboard: </strong> <a href="https://jupyterhub.hpc.ucar.edu/stable/user/eromashkova/proxy/39955/status" target="_blank">https://jupyterhub.hpc.ucar.edu/stable/user/eromashkova/proxy/39955/status</a>
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Memory: </strong> 23.28 GiB
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Nanny: </strong> tcp://10.12.206.39:36852
-                        </td>
-                        <td style="text-align: left;"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="text-align: left;">
-                            <strong>Local directory: </strong> /glade/scratch/eromashkova/dask-workers/dask-worker-space/worker-zoj_wogd
-                        </td>
-                    </tr>
-
-                    
-
-                    
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Tasks executing: </strong> 
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Tasks in memory: </strong> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Tasks ready: </strong> 
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Tasks in flight: </strong>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>CPU usage:</strong> 2.0%
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Last seen: </strong> Just now
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Memory usage: </strong> 287.68 MiB
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Spilled bytes: </strong> 0 B
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">
-                            <strong>Read bytes: </strong> 1.85 GiB
-                        </td>
-                        <td style="text-align: left;">
-                            <strong>Write bytes: </strong> 3.06 MiB
-                        </td>
-                    </tr>
-                    
-
-                </table>
-            </details>
-            </div>
-        </div>
-        
 
     </details>
+</div>
+
+        </details>
+    </div>
 </div>
             </details>
         
@@ -1236,13 +913,13 @@ Dimensions:  (time: 4428)
 Coordinates:
   * time     (time) object 1653-02-01 00:00:00 ... 2022-01-01 00:00:00
 Data variables:
-    MOC      (time) float32 ...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-d05b2ff1-37d0-4564-8ec6-df30de515cd0' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-d05b2ff1-37d0-4564-8ec6-df30de515cd0' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 4428</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-2bb3e7e3-adc8-4466-b218-d2a83eb32164' class='xr-section-summary-in' type='checkbox'  checked><label for='section-2bb3e7e3-adc8-4466-b218-d2a83eb32164' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>1653-02-01 00:00:00 ... 2022-01-...</div><input id='attrs-b6cfaf07-2444-46a0-b69c-b547298ab10e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b6cfaf07-2444-46a0-b69c-b547298ab10e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-274c8e22-9d6b-4a13-98e2-010817c04f5e' class='xr-var-data-in' type='checkbox'><label for='data-274c8e22-9d6b-4a13-98e2-010817c04f5e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>time</dd><dt><span>bounds :</span></dt><dd>time_bound</dd></dl></div><div class='xr-var-data'><pre>array([cftime.DatetimeNoLeap(1653, 2, 1, 0, 0, 0, 0, has_year_zero=True),
+    MOC      (time) float32 ...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-30aebf48-799c-42d4-8820-e706815da8b9' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-30aebf48-799c-42d4-8820-e706815da8b9' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 4428</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-ee4c53f7-9fc4-49e7-99e0-2e1c7345516c' class='xr-section-summary-in' type='checkbox'  checked><label for='section-ee4c53f7-9fc4-49e7-99e0-2e1c7345516c' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>1653-02-01 00:00:00 ... 2022-01-...</div><input id='attrs-dc32fcfb-2ca5-4daf-9d1a-aa57b37e2b66' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-dc32fcfb-2ca5-4daf-9d1a-aa57b37e2b66' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b23c64d4-1cb7-4afd-8488-a6d4441be7b5' class='xr-var-data-in' type='checkbox'><label for='data-b23c64d4-1cb7-4afd-8488-a6d4441be7b5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>time</dd><dt><span>bounds :</span></dt><dd>time_bound</dd></dl></div><div class='xr-var-data'><pre>array([cftime.DatetimeNoLeap(1653, 2, 1, 0, 0, 0, 0, has_year_zero=True),
        cftime.DatetimeNoLeap(1653, 3, 1, 0, 0, 0, 0, has_year_zero=True),
        cftime.DatetimeNoLeap(1653, 4, 1, 0, 0, 0, 0, has_year_zero=True), ...,
        cftime.DatetimeNoLeap(2021, 11, 1, 0, 0, 0, 0, has_year_zero=True),
        cftime.DatetimeNoLeap(2021, 12, 1, 0, 0, 0, 0, has_year_zero=True),
        cftime.DatetimeNoLeap(2022, 1, 1, 0, 0, 0, 0, has_year_zero=True)],
-      dtype=object)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-e6b7393c-6e40-4f5f-89a3-8272fe233c77' class='xr-section-summary-in' type='checkbox'  checked><label for='section-e6b7393c-6e40-4f5f-89a3-8272fe233c77' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>MOC</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f16e32f6-bfe9-4aa3-a83e-9376af07f8bf' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f16e32f6-bfe9-4aa3-a83e-9376af07f8bf' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-39f67248-7945-477c-98ae-0f82a1f79774' class='xr-var-data-in' type='checkbox'><label for='data-39f67248-7945-477c-98ae-0f82a1f79774' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>[4428 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-484e40de-881b-4018-9276-130630afc6f3' class='xr-section-summary-in' type='checkbox'  ><label for='section-484e40de-881b-4018-9276-130630afc6f3' class='xr-section-summary' >Indexes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-e985e764-3479-4724-8bae-706ed0ced4cb' class='xr-index-data-in' type='checkbox'/><label for='index-e985e764-3479-4724-8bae-706ed0ced4cb' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(CFTimeIndex([1653-02-01 00:00:00, 1653-03-01 00:00:00, 1653-04-01 00:00:00,
+      dtype=object)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-3be8fba8-e749-40c3-83e1-ac8906e8b9ce' class='xr-section-summary-in' type='checkbox'  checked><label for='section-3be8fba8-e749-40c3-83e1-ac8906e8b9ce' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>MOC</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f4ec6f7b-ac67-45b2-9c84-018e8e61b009' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f4ec6f7b-ac67-45b2-9c84-018e8e61b009' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-91cedbe9-6a6d-4866-8a4b-020d78a086fd' class='xr-var-data-in' type='checkbox'><label for='data-91cedbe9-6a6d-4866-8a4b-020d78a086fd' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>[4428 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-96fa98f7-7d8b-4c0e-a093-8f151a064dab' class='xr-section-summary-in' type='checkbox'  ><label for='section-96fa98f7-7d8b-4c0e-a093-8f151a064dab' class='xr-section-summary' >Indexes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-78cf75b3-0e21-4cda-b112-30d42f948163' class='xr-index-data-in' type='checkbox'/><label for='index-78cf75b3-0e21-4cda-b112-30d42f948163' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(CFTimeIndex([1653-02-01 00:00:00, 1653-03-01 00:00:00, 1653-04-01 00:00:00,
              1653-05-01 00:00:00, 1653-06-01 00:00:00, 1653-07-01 00:00:00,
              1653-08-01 00:00:00, 1653-09-01 00:00:00, 1653-10-01 00:00:00,
              1653-11-01 00:00:00,
@@ -1251,7 +928,7 @@ Data variables:
              2021-07-01 00:00:00, 2021-08-01 00:00:00, 2021-09-01 00:00:00,
              2021-10-01 00:00:00, 2021-11-01 00:00:00, 2021-12-01 00:00:00,
              2022-01-01 00:00:00],
-            dtype=&#x27;object&#x27;, length=4428, calendar=&#x27;noleap&#x27;, freq=&#x27;MS&#x27;))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-3d09048c-aaf6-49a9-9a75-e3986510076e' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-3d09048c-aaf6-49a9-9a75-e3986510076e' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+            dtype=&#x27;object&#x27;, length=4428, calendar=&#x27;noleap&#x27;, freq=&#x27;MS&#x27;))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-5b6ca5ae-8b3e-45fa-bdc4-216ce167c6ad' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-5b6ca5ae-8b3e-45fa-bdc4-216ce167c6ad' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1260,7 +937,7 @@ Data variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2b69c9f97f10&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2b032c10efd0&gt;]
 </pre></div>
 </div>
 <img alt="_images/0190c56cf13d557ae99e1a3ef1ed0b3a2ddd26e0aeebb9f6dcb151598070ca41.png" src="_images/0190c56cf13d557ae99e1a3ef1ed0b3a2ddd26e0aeebb9f6dcb151598070ca41.png" />

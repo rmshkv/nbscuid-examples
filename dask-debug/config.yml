@@ -38,12 +38,12 @@ book_config_keys:
 compute_notebooks:  
 
   dasktest:
-    use_cluster: False
+    use_cluster: True
     parameter_groups:
       none:
         casename: *casename
   dasktest2:
-    use_cluster: False
+    use_cluster: True
     parameter_groups:
       none:
         casename: *casename

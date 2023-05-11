@@ -50,7 +50,7 @@ compute_notebooks:
         casename: *casename
   
   equatorial:
-    use_cluster: False
+    use_cluster: True
     parameter_groups:  
       none:
         not_casename: *casename
@@ -58,13 +58,13 @@ compute_notebooks:
         obs_suffix: '_tx0.66v1_34lev_ann_avg.nc'
   
   moc:
-    use_cluster: False
+    use_cluster: True
     parameter_groups:  
       none:
         not_casename: *casename
         
   ocean_stats:
-    use_cluster: False
+    use_cluster: True
     parameter_groups:  
       none:
         not_casename: *casename
@@ -76,19 +76,19 @@ compute_notebooks:
 #         not_casename: *casename
 
   surface:
-    use_cluster: False
+    use_cluster: True
     parameter_groups:  
       none:
         not_casename: *casename
 
   transports:
-    use_cluster: False
+    use_cluster: True
     parameter_groups:  
       none:
         not_casename: *casename
         
   ts_biases:
-    use_cluster: False
+    use_cluster: True
     parameter_groups:  
       none:
         not_casename: *casename

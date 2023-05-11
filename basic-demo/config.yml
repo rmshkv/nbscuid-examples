@@ -12,8 +12,7 @@ data_sources:
 
 ###
 # computation config keys
-output_root: ./_computed-notebooks
-default_kernel_name: nbscuid-basic-demo-env1
+default_kernel_name: diag-sandbox
 account: NCGD0011
 
 
@@ -58,7 +57,7 @@ compute_notebooks:
         casename: *casename
   
   ssh:
-    use_cluster: True
+    use_cluster: False
     subset:
       frequency: 'month_1'
       component: 'ocn'
@@ -68,8 +67,8 @@ compute_notebooks:
         casename: *casename
 
   POP_MOC_extract_cat:
-    use_cluster: True
-    kernel_name: nbscuid-basic-demo-env2
+    use_cluster: False
+    kernel_name: diag-sandbox-moc-pop-tools
     subset:
       frequency: 'month_1'
       component: 'ocn'
@@ -79,8 +78,8 @@ compute_notebooks:
         casename: *casename
        
   moc-view:
-    use_cluster: True
-    kernel_name: nbscuid-basic-demo-env2
+    use_cluster: False
+    kernel_name: diag-sandbox-moc-pop-tools
     dependency: 'POP_MOC_extract_cat'
     parameter_groups:
       26n:
