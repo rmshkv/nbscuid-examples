@@ -10,7 +10,6 @@ latex:
     targetname: nbscuid-default.tex
 sphinx:
   config:
-    bibtex_reference_style: author_year
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 launch_buttons:
   jupyterhub_url: https://jupyterhub.hpc.ucar.edu
