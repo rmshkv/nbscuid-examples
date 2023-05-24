@@ -9,6 +9,7 @@ data_sources:
 ###
 # computation config keys
 default_kernel_name: mom6_solutions
+use_cluster: True
 account: NCGD0011
 
 

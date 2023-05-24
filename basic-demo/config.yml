@@ -13,6 +13,7 @@ data_sources:
 ###
 # computation config keys
 default_kernel_name: diag-sandbox
+use_cluster: True
 account: NCGD0011
 
 
@@ -57,7 +58,7 @@ compute_notebooks:
         casename: *casename
   
   ssh:
-    use_cluster: False
+    use_cluster: True
     subset:
       frequency: 'month_1'
       component: 'ocn'
@@ -67,7 +68,7 @@ compute_notebooks:
         casename: *casename
 
   POP_MOC_extract_cat:
-    use_cluster: False
+    use_cluster: True
     kernel_name: diag-sandbox-moc-pop-tools
     subset:
       frequency: 'month_1'
@@ -78,7 +79,7 @@ compute_notebooks:
         casename: *casename
        
   moc-view:
-    use_cluster: False
+    use_cluster: True
     kernel_name: diag-sandbox-moc-pop-tools
     dependency: 'POP_MOC_extract_cat'
     parameter_groups:

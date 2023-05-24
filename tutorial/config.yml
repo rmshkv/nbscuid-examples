@@ -32,8 +32,12 @@ data_sources:
 
 default_kernel_name: nbscuid-tutorial1
 
+# Specifies whether to spin up a global Dask cluster
+
+use_cluster: True
+
 # account is the account key, specific to NCAR machines. Used
-### when a universal Dask cluster is being spun up.
+### if a global Dask cluster is being spun up.
 
 account: NCGD0011
 
@@ -43,6 +47,12 @@ account: NCGD0011
 ############################
 # Notebooks and Parameters #
 ############################
+
+# All parameters under global_params get passed to all the notebooks
+
+global_params:
+    test_global_param: hello
+
 compute_notebooks:  
 
   # This is where all the notebooks you want run and their
