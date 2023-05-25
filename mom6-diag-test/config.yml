@@ -99,18 +99,18 @@ book_toc:
   # All filenames are notebook filename without the .ipynb, similar to above
   
   root: testnb  # root is the notebook that will be the homepage for the book
-  # parts:
+  parts:
 
     # Parts group notebooks into different sections in the Jupyter book
     ### table of contents, so you can organize different parts of your project.
 
-#     - caption: mom6 notebooks
+    - caption: mom6 notebooks
 
-#       # Each chapter is the name of one of the notebooks that you executed
-#       ### in compute_notebooks above, also without .ipynb
-#       chapters:
-        # - file: section_transports
-        # - file: TS_levels
+      # Each chapter is the name of one of the notebooks that you executed
+      ### in compute_notebooks above, also without .ipynb
+      chapters:
+        - file: section_transports
+        - file: TS_levels
 
 
 
