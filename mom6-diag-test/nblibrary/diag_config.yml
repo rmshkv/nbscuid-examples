@@ -1,8 +1,0 @@
-Avg:
-  end_date: '0061-12-31'
-  start_date: '0031-01-01'
-Case:
-  CASEROOT: /glade/work/gmarques/cesm.cases/G/gmom.e23.GJRAv4.TL319_t061_zstar_N65.nuopc.HBD.002/
-  CIMEROOT: /glade/work/gmarques/cesm.sandboxes/cesm2_3_alpha08a.sbx/cime/
-  OCN_DIAG_ROOT: /glade/work/gmarques/Notebooks/for_elena/ncfiles/
-  SNAME: HBD_zstar
