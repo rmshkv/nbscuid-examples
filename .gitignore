@@ -35,5 +35,6 @@ MANIFEST
 **/cache_data_path/**
 **/cache_metadata_path/**
 **/temp_data/**
+**/ncfiles/**
 
 

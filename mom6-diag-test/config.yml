@@ -12,13 +12,13 @@ data_sources:
     # run_dir is the path to the folder you want
     ### all the files associated with this configuration
     ### to be created in
-    run_dir: /glade/u/home/eromashkova/codes/nbscuid-examples/mom6-diag-test
+    run_dir: .
 
     # nb_path_root is the path to the folder that nbscuid will
     ### look for your template notebooks in. It doesn't have to 
     ### be inside run_dir, or be specific to this project, as
     ### long as the notebooks are there
-    nb_path_root: /glade/u/home/eromashkova/codes/nbscuid-examples/mom6-diag-test/nblibrary
+    nb_path_root: nblibrary
 
 ######################
 # Computation Config #
@@ -31,6 +31,7 @@ data_sources:
 ### notebook in NOTEBOOK CONFIG
 
 default_kernel_name: mom6_solutions
+# default_kernel_name: mom6-diag-test-nbscuid
 
 use_cluster: True
 
@@ -98,18 +99,18 @@ book_toc:
   # All filenames are notebook filename without the .ipynb, similar to above
   
   root: testnb  # root is the notebook that will be the homepage for the book
-  parts:
+  # parts:
 
     # Parts group notebooks into different sections in the Jupyter book
     ### table of contents, so you can organize different parts of your project.
 
-    - caption: mom6 notebooks
+#     - caption: mom6 notebooks
 
-      # Each chapter is the name of one of the notebooks that you executed
-      ### in compute_notebooks above, also without .ipynb
-      chapters:
-        - file: section_transports
-        - file: TS_levels
+#       # Each chapter is the name of one of the notebooks that you executed
+#       ### in compute_notebooks above, also without .ipynb
+#       chapters:
+        # - file: section_transports
+        # - file: TS_levels
 
 
 
