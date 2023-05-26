@@ -1,4 +1,4 @@
-name: nbscuid-papermill-test
+name: nbscuid-dask-debug
 channels:
   - conda-forge
   - nodefaults
@@ -40,3 +40,6 @@ dependencies:
   - xhistogram
   - xrft
   - zarr
+  - pip:
+      - nbscuid>=0.0.9
+

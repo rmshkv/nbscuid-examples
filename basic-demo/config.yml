@@ -1,20 +1,21 @@
 ###
 # data sources
 data_sources:
-    casename: &casename
+    sname: &sname
       gcp-cases
     path_to_cat_json: '/glade/u/home/eromashkova/codes/nbscuid-examples/basic-demo/gcp-cases.json'
     subset:
       case:
         - 'g.e22.GOMIPECOIAF_JRA-1p4-2018.TL319_g17.GCB_2022.BCRD'
-    run_dir: '/glade/u/home/eromashkova/codes/nbscuid-examples/basic-demo'
-    nb_path_root: '/glade/u/home/eromashkova/codes/nbscuid-examples/basic-demo/nbscuid_test_nbs'
+    run_dir: .
+    nb_path_root: nbscuid_test_nbs
 
 ###
 # computation config keys
-default_kernel_name: diag-sandbox
-use_cluster: True
-account: NCGD0011
+computation_config:
+    default_kernel_name: diag-sandbox
+    use_cluster: True
+    account: NCGD0011
 
 
 ###
@@ -55,7 +56,7 @@ compute_notebooks:
     use_cluster: False
     parameter_groups:
       none:
-        casename: *casename
+        sname: *sname
   
   ssh:
     use_cluster: True
@@ -65,7 +66,7 @@ compute_notebooks:
       variable: 'SSH'
     parameter_groups:  
       none:
-        casename: *casename
+        sname: *sname
 
   POP_MOC_extract_cat:
     use_cluster: True
@@ -76,7 +77,7 @@ compute_notebooks:
       variable: 'MOC'
     parameter_groups:  
       none:
-        casename: *casename
+        sname: *sname
        
   moc-view:
     use_cluster: True
@@ -84,7 +85,7 @@ compute_notebooks:
     dependency: 'POP_MOC_extract_cat'
     parameter_groups:
       26n:
-        casename: *casename
+        sname: *sname
         title_param: "26n"
         
         
