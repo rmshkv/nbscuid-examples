@@ -66,12 +66,12 @@ compute_notebooks:
       none:
         casename: *casename
   
-  section_transports:
-    use_cluster: False
-    parameter_groups:
-      none:
-        casename: *casename
-        start_date: '0001-01-01'
+  # section_transports:
+  #   use_cluster: False
+  #   parameter_groups:
+  #     none:
+  #       casename: *casename
+  #       start_date: '0001-01-01'
         
   TS_levels:
     use_cluster: True
@@ -109,7 +109,7 @@ book_toc:
       # Each chapter is the name of one of the notebooks that you executed
       ### in compute_notebooks above, also without .ipynb
       chapters:
-        - file: section_transports
+        # - file: section_transports
         - file: TS_levels
 
 
