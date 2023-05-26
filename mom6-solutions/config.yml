@@ -1,16 +1,17 @@
 ###
 # data sources
 data_sources:
-    casename: &casename
-      placeholder-casename
-    run_dir: '/glade/u/home/eromashkova/codes/nbscuid-examples/mom6-solutions'
-    nb_path_root: '/glade/u/home/eromashkova/codes/nbscuid-examples/mom6-solutions/nblibrary'
+    sname: &sname
+      placeholder-sname
+    run_dir: .
+    nb_path_root: nblibrary
 
 ###
 # computation config keys
-default_kernel_name: mom6_solutions
-use_cluster: True
-account: NCGD0011
+computation_config: 
+    default_kernel_name: mom6_solutions
+    use_cluster: True
+    account: NCGD0011
 
 
 ###
@@ -48,13 +49,13 @@ compute_notebooks:
     use_cluster: False
     parameter_groups:
       none:
-        casename: *casename
+        sname: *sname
   
   equatorial:
     use_cluster: True
     parameter_groups:  
       none:
-        not_casename: *casename
+        sname: *sname
         obs_path: '/glade/u/home/gmarques/Notebooks/CESM_MOM6/WOA18_remapping/'
         obs_suffix: '_tx0.66v1_34lev_ann_avg.nc'
   
@@ -62,37 +63,37 @@ compute_notebooks:
     use_cluster: True
     parameter_groups:  
       none:
-        not_casename: *casename
+        sname: *sname
         
   ocean_stats:
     use_cluster: True
     parameter_groups:  
       none:
-        not_casename: *casename
+        sname: *sname
           
 #   pht:
 #     use_cluster: False
 #     parameter_groups:  
 #       none:
-#         not_casename: *casename
+#         sname: *sname
 
   surface:
     use_cluster: True
     parameter_groups:  
       none:
-        not_casename: *casename
+        sname: *sname
 
   transports:
     use_cluster: True
     parameter_groups:  
       none:
-        not_casename: *casename
+        sname: *sname
         
   ts_biases:
     use_cluster: True
     parameter_groups:  
       none:
-        not_casename: *casename
+        sname: *sname
   
   
 

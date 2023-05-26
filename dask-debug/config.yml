@@ -1,16 +1,17 @@
 ###
 # data sources
 data_sources:
-    casename: &casename
-      placeholder-casename
-    run_dir: '/glade/u/home/eromashkova/codes/nbscuid-examples/dask-debug'
-    nb_path_root: '/glade/u/home/eromashkova/codes/nbscuid-examples/dask-debug/nblibrary'
+    sname: &sname
+      placeholder-sname
+    run_dir: .
+    nb_path_root: nblibrary
 
 ###
 # computation config keys
-default_kernel_name: nbscuid-papermill-test
-use_cluster: True
-account: NCGD0011
+computation_config:
+    default_kernel_name: nbscuid-dask-debug
+    use_cluster: True
+    account: NCGD0011
 
 
 ###
@@ -42,12 +43,12 @@ compute_notebooks:
     use_cluster: True
     parameter_groups:
       none:
-        casename: *casename
+        sname: *sname
   dasktest2:
     use_cluster: True
     parameter_groups:
       none:
-        casename: *casename
+        sname: *sname
   
   
 

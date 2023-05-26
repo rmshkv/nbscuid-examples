@@ -5,8 +5,9 @@
 # Data Sources #
 ################
 data_sources:
-    # casename can be any string used as a title for this configuration
-    casename: &casename
+    # sname is any string used as a nickname for this configuration. It will be
+    ### used as the name of the folder your computed notebooks are put in
+    sname: &sname
       placeholder-title
     
     # run_dir is the path to the folder you want
@@ -24,22 +25,24 @@ data_sources:
 # Computation Config #
 ######################
 
-# default_kernel_name is the name of the environment that
-### the notebooks in this configuration will be run in by default.
-### It must already be installed on your machine. You can also
-### specify a different environment than the default for any
-### notebook in NOTEBOOK CONFIG
+computation_config: 
 
-default_kernel_name: nbscuid-tutorial1
+    # default_kernel_name is the name of the environment that
+    ### the notebooks in this configuration will be run in by default.
+    ### It must already be installed on your machine. You can also
+    ### specify a different environment than the default for any
+    ### notebook in NOTEBOOK CONFIG
 
-# Specifies whether to spin up a global Dask cluster
+    default_kernel_name: nbscuid-tutorial1
 
-use_cluster: True
+    # Specifies whether to spin up a global Dask cluster
 
-# account is the account key, specific to NCAR machines. Used
-### if a global Dask cluster is being spun up.
+    use_cluster: True
 
-account: NCGD0011
+    # account is the account key, specific to NCAR machines. Used
+    ### if a global Dask cluster is being spun up.
+
+    account: NCGD0011
 
 
 ############# NOTEBOOK CONFIG #############
@@ -71,17 +74,17 @@ compute_notebooks:
     use_cluster: False
     parameter_groups:
       none:
-        casename: *casename
+        sname: *sname
   
   params_nb:
     use_cluster: True
     parameter_groups:
       #   
       none:
-        # This notation pulls in the casename parameter set earlier
+        # This notation pulls in the sname parameter set earlier
         ### in the file, so it can be referenced in the notebook, e.g. if 
         ### you want to use it in a title Markdown cell
-        casename: *casename
+        sname: *sname
 
         # These parameters will be read into the notebook, so for example
         ### a variable will be created with the name param_1 and value
@@ -95,7 +98,7 @@ compute_notebooks:
     use_cluster: True
     parameter_groups:  
       none:
-        casename: *casename
+        sname: *sname
 
         # Parameters can be other formats besides strings, like ints,
         ### floats, and dicts
@@ -113,12 +116,12 @@ compute_notebooks:
       ### one parameter group.
 
       group_1:
-        casename: *casename
+        sname: *sname
         nb_number: 3
         param_1: some_string
         param_2: {key1: dict_entry1, key2: dict_entry2}
       group_2:
-        casename: *casename
+        sname: *sname
         nb_number: 4
         param_1: some_different_string
         param_2: {key1: dict_entry3, key2: dict_entry4}

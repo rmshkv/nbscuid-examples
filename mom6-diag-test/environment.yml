@@ -18,4 +18,4 @@ dependencies:
     - dask-labextension
     - pip:
       - git+https://github.com/NCAR/mom6-tools.git
-      - nbscuid>=0.0.8
+      - nbscuid>=0.0.9

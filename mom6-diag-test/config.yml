@@ -5,8 +5,9 @@
 # Data Sources #
 ################
 data_sources:
-    # casename can be any string used as a title for this configuration
-    casename: &casename
+    # sname is any string used as a nickname for this configuration. It will be
+    ### used as the name of the folder your computed notebooks are put in
+    sname: &sname
       placeholder-title
     
     # run_dir is the path to the folder you want
@@ -24,21 +25,23 @@ data_sources:
 # Computation Config #
 ######################
 
-# default_kernel_name is the name of the environment that
-### the notebooks in this configuration will be run in by default.
-### It must already be installed on your machine. You can also
-### specify a different environment than the default for any
-### notebook in NOTEBOOK CONFIG
+computation_config:
 
-default_kernel_name: mom6_solutions
-# default_kernel_name: mom6-diag-test-nbscuid
+    # default_kernel_name is the name of the environment that
+    ### the notebooks in this configuration will be run in by default.
+    ### It must already be installed on your machine. You can also
+    ### specify a different environment than the default for any
+    ### notebook in NOTEBOOK CONFIG
 
-use_cluster: True
+    default_kernel_name: mom6_solutions
+    # default_kernel_name: mom6-diag-test-nbscuid
 
-# account is the account key, specific to NCAR machines. Used
-### when a global Dask cluster is being spun up.
+    use_cluster: True
 
-account: NCGD0011
+    # account is the account key, specific to NCAR machines. Used
+    ### when a global Dask cluster is being spun up.
+
+    account: NCGD0011
 
 
 ############# NOTEBOOK CONFIG #############
@@ -64,20 +67,20 @@ compute_notebooks:
     use_cluster: True
     parameter_groups:
       none:
-        casename: *casename
+        sname: *sname
   
-  # section_transports:
-  #   use_cluster: False
-  #   parameter_groups:
-  #     none:
-  #       casename: *casename
-  #       start_date: '0001-01-01'
+  section_transports:
+    use_cluster: False
+    parameter_groups:
+      none:
+        sname: *sname
+        start_date: '0001-01-01'
         
   TS_levels:
     use_cluster: True
     parameter_groups:  
       none:
-        casename: *casename
+        sname: *sname
         test_param: test
         woa_path: '/glade/u/home/gmarques/Notebooks/CESM_MOM6/WOA18_remapping/'
         WOA18_temp_path: '/glade/u/home/gmarques/Notebooks/CESM_MOM6/WOA18_remapping/WOA18_TEMP_tx0.66v1_34lev_ann_avg.nc'
@@ -109,7 +112,7 @@ book_toc:
       # Each chapter is the name of one of the notebooks that you executed
       ### in compute_notebooks above, also without .ipynb
       chapters:
-        # - file: section_transports
+        - file: section_transports
         - file: TS_levels
 
 
