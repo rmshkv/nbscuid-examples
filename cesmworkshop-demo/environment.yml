@@ -1,0 +1,21 @@
+name: mom6-diag-test-nbscuid
+channels:
+    - conda-forge
+    - nodefaults
+dependencies:
+    - numpy
+    - xarray
+    - matplotlib
+    - cartopy
+    - dask
+    - jupyter
+    - jupyterlab
+    - netCDF4
+    - ncar-jobqueue
+    - nc-time-axis
+    - pip
+    - pop-tools
+    - dask-labextension
+    - pip:
+      - git+https://github.com/NCAR/mom6-tools.git
+      - nbscuid>=0.0.9

@@ -1,0 +1,124 @@
+
+################## SETUP ##################
+
+################
+# Data Sources #
+################
+data_sources:
+    # sname is any string used as a nickname for this configuration. It will be
+    ### used as the name of the folder your computed notebooks are put in
+    sname: &sname
+      cesmworkshop-demo-run1
+    
+    # run_dir is the path to the folder you want
+    ### all the files associated with this configuration
+    ### to be created in
+    run_dir: .
+
+    # nb_path_root is the path to the folder that nbscuid will
+    ### look for your template notebooks in. It doesn't have to 
+    ### be inside run_dir, or be specific to this project, as
+    ### long as the notebooks are there
+    nb_path_root: nblibrary
+
+######################
+# Computation Config #
+######################
+
+computation_config:
+
+    # default_kernel_name is the name of the environment that
+    ### the notebooks in this configuration will be run in by default.
+    ### It must already be installed on your machine. You can also
+    ### specify a different environment than the default for any
+    ### notebook in NOTEBOOK CONFIG
+
+    default_kernel_name: mom6_solutions
+    # default_kernel_name: mom6-diag-test-nbscuid
+
+    use_cluster: True
+
+    # account is the account key, specific to NCAR machines. Used
+    ### when a global Dask cluster is being spun up.
+
+    account: NCGD0011
+
+
+############# NOTEBOOK CONFIG #############
+
+############################
+# Notebooks and Parameters #
+############################
+global_params:
+    diag_config_yml:
+        Avg:
+          end_date: '0061-12-31'
+          start_date: '0031-01-01'
+        Case:
+          CASEROOT: /glade/work/gmarques/cesm.cases/G/gmom.e23.GJRAv4.TL319_t061_zstar_N65.nuopc.HBD.002/
+          CIMEROOT: /glade/work/gmarques/cesm.sandboxes/cesm2_3_alpha08a.sbx/cime/
+          OCN_DIAG_ROOT: /glade/work/gmarques/Notebooks/for_elena/ncfiles/
+          SNAME: HBD_zstar
+    
+compute_notebooks:  
+
+  intro:
+
+    use_cluster: False
+    parameter_groups:
+      none:
+         sname: *sname
+  
+        
+  TS_levels:
+    use_cluster: True
+    parameter_groups:  
+      none:
+        sname: *sname
+        test_param: "This parameter was inserted!"
+        woa_path: '/glade/u/home/gmarques/Notebooks/CESM_MOM6/WOA18_remapping/'
+        WOA18_temp_path: '/glade/u/home/gmarques/Notebooks/CESM_MOM6/WOA18_remapping/WOA18_TEMP_tx0.66v1_34lev_ann_avg.nc'
+        WOA18_salt_path: '/glade/u/home/gmarques/Notebooks/CESM_MOM6/WOA18_remapping/WOA18_SALT_tx0.66v1_34lev_ann_avg.nc'
+
+
+########### JUPYTER BOOK CONFIG ###########
+
+##################################
+# Jupyter Book Table of Contents #
+##################################
+book_toc:
+    
+  # See https://jupyterbook.org/en/stable/structure/configure.html for
+  ## complete documentation of Jupyter book construction options
+
+  format: jb-book
+
+  # All filenames are notebook filename without the .ipynb, similar to above
+  
+  root: intro  # root is the notebook that will be the homepage for the book
+  parts:
+
+    # Parts group notebooks into different sections in the Jupyter book
+    ### table of contents, so you can organize different parts of your project.
+
+    - caption: Diagnostic notebooks
+
+      # Each chapter is the name of one of the notebooks that you executed
+      ### in compute_notebooks above, also without .ipynb
+      chapters:
+        - file: TS_levels
+
+
+
+#####################################
+# Keys for Jupyter Book _config.yml #
+#####################################
+book_config_keys:
+
+  title: Example project   # Title of your jupyter book
+  
+  # Other keys can be added here, see https://jupyterbook.org/en/stable/customize/config.html
+  ### for many more options
+
+        
+        
