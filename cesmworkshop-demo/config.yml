@@ -33,8 +33,8 @@ computation_config:
     ### specify a different environment than the default for any
     ### notebook in NOTEBOOK CONFIG
 
-    default_kernel_name: mom6_solutions
-    # default_kernel_name: mom6-diag-test-nbscuid
+    # default_kernel_name: mom6_solutions
+    default_kernel_name: mom6-diag-test-nbscuid
 
     use_cluster: True
 
@@ -62,7 +62,7 @@ global_params:
     
 compute_notebooks:  
 
-  intro:
+  index:
 
     use_cluster: False
     parameter_groups:
@@ -70,8 +70,8 @@ compute_notebooks:
          sname: *sname
   
         
-  TS_levels:
-    use_cluster: True
+  global_TS_levels:
+    use_cluster: False
     parameter_groups:  
       none:
         sname: *sname
@@ -95,7 +95,7 @@ book_toc:
 
   # All filenames are notebook filename without the .ipynb, similar to above
   
-  root: intro  # root is the notebook that will be the homepage for the book
+  root: index  # root is the notebook that will be the homepage for the book
   parts:
 
     # Parts group notebooks into different sections in the Jupyter book
@@ -106,7 +106,7 @@ book_toc:
       # Each chapter is the name of one of the notebooks that you executed
       ### in compute_notebooks above, also without .ipynb
       chapters:
-        - file: TS_levels
+        - file: global_TS_levels
 
 
 

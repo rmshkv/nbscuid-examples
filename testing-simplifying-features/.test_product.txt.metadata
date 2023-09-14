@@ -1,0 +1,1 @@
+{"timestamp": 1694559391.847043, "stored_source_code": "# add default values for parameters here\nif __name__ == \"__main__\":\n    print(\"Hello world!\")\n    \n    with open('test_product.txt', 'w') as f:\n        f.write('Hello world!')", "params": {"test_global_param": "hello", "sname": "placeholder-title", "subset_kwargs": {}}}
