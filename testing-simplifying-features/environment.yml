@@ -1,0 +1,11 @@
+name: nbscuid-tutorial1
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - dask
+  - pip
+  - ipykernel
+  - pip:
+      - nbscuid>=0.0.9
+
