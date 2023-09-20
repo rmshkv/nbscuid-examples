@@ -77,7 +77,7 @@ compute_notebooks:
         param_2: another_string
   
   another_params_nb:
-    dependency: params_nb
+    #dependency: params_nb
     parameter_groups:  
       none:
         sname: *sname
@@ -110,6 +110,7 @@ compute_notebooks:
 compute_scripts:
 
     test_script1:
+        # dependency: something
         parameter_groups:
             none:
                 sname: *sname
