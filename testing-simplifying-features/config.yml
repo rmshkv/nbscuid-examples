@@ -33,7 +33,7 @@ computation_config:
     ### specify a different environment than the default for any
     ### notebook in NOTEBOOK CONFIG
 
-    default_kernel_name: nbscuid-tutorial1
+    default_kernel_name: nbscuid-tutorial2
 
 
 ############# NOTEBOOK CONFIG #############
